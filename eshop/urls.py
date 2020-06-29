@@ -3,10 +3,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('core.urls', namespace='core'))
+    path('', include('core.urls', namespace='core')),
+    path('box', include('core.urls', namespace='core')),
+    path('manage/', include('core.urls', namespace='core')),
+    path('item/new/', include('core.urls', namespace='core'))
+
 ]
 
 if settings.DEBUG:

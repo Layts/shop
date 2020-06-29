@@ -13,3 +13,4 @@ media
 /.vscode
 Lib
 static
+core/migrations/0001_initial.py
