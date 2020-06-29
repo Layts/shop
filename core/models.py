@@ -4,7 +4,7 @@ from django.conf import global_settings
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.title
 
@@ -15,6 +15,7 @@ class Item(models.Model):
     number_of_objects = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     photo = models.ImageField()
+    aroma = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
@@ -36,6 +37,4 @@ class Order(models.Model):
         return self.title
 
 
-class Photo(models.Model):
-    pass
 

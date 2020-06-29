@@ -6,6 +6,6 @@ app_name = 'core'
 urlpatterns = [
     path('', item_list, name='item-list'),
     path('box', box, name='item-list'),
-    path('manage/', manage_items, name='item-list'),
+    path('manage/', manage_items, name='manage'),
     path('item/new/', item_new, name='item_new'),
 ]
