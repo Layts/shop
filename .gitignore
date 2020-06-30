@@ -13,6 +13,4 @@ media
 /.vscode
 Lib
 static
-core/migrations/0001_initial.py
-core/migrations/__init__.py
-core/migrations/0002_item_category.py
+core/migrations

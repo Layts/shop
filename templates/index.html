@@ -2,7 +2,7 @@
 
 {% block content %}
 	<!-- Home -->
-
+{% load static %}
 	<div class="home">
 		
 		<!-- Home Slider -->
@@ -11,7 +11,7 @@
 				
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/home_slider_1.jpg)"></div>
+					<div class="background_image" style="background-image:url({% static 'images/home_slider_1.jpg'%})"></div>
 					<div class="home_content_container">
 						<div class="home_content">
 							<div class="home_discount d-flex flex-row align-items-end justify-content-start">
@@ -19,7 +19,7 @@
 								<div class="home_discount_text">Discount on the</div>
 							</div>
 							<div class="home_title">New Collection</div>
-							<div class="button button_1 home_button trans_200"><a href="categories.html">Shop NOW!</a></div>
+							<div class="button button_1 home_button trans_200"><a href="{% static 'categories.html'%}">Shop NOW!</a></div>
 						</div>
 					</div>
 				</div>
