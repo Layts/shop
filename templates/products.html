@@ -9,15 +9,15 @@
 				<div class="row">
 					<div class="col">
 						<div class="products_container grid">
-							{% for item in items %}
+							{% for obj in items %}
 							<!-- Product -->
 							<div class="product grid-item">
 								<div class="product_inner">
-									<div class="product_image"><img src=/media/{{item.photo}} alt=""></div>
+									<div class="product_image"><img src=/media/{{obj.photo}} alt=""></div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="product.html">{{item.title}}</a></div>
-										<div class="product_price">{{item.price}}р</div>
-										<div class="product_button ml-auto mr-auto trans_200"><a href="{{ object.get_add_to_cart_url }}">Купить</a></div>
+										<div class="product_title"><a href="{{ obj.get_absolute_url }}">{{obj.title}}</a></div>
+										<div class="product_price">{{obj.price}}р</div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="{{ obj.get_add_to_cart_url }}">Купить</a></div>
 									</div>
 								</div>
 							</div>

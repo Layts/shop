@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import global_settings
 from django.shortcuts import reverse
+from autoslug import AutoSlugField
+
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
@@ -11,19 +13,19 @@ class Category(models.Model):
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
-    price = models.IntegerField()
-    quantity = models.IntegerField()
+    price = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     photo = models.ImageField()
     aroma = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
-    slug = models.SlugField()
+    slug = AutoSlugField(populate_from='title', unique=True)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
+        return reverse("core:item", kwargs={
             'slug': self.slug
         })
 
@@ -40,7 +42,9 @@ class Item(models.Model):
 
 class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)
+    quantity = models.PositiveIntegerField(default=1)
+    title = models.CharField(max_length=100, default=item)
+    order_name = models.ForeignKey("Order", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -51,6 +55,8 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now=True)
     ordered = models.BooleanField(default=False)
+    ordered_date = models.DateTimeField()
+    title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
