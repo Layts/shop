@@ -13,4 +13,4 @@ media
 /.vscode
 Lib
 static
-core/migrations
+src/core/migrations
