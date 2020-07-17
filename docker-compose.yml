@@ -37,9 +37,9 @@ services:
     volumes:
       - ./var/postgresql-data/:/var/lib/postgresql/data/
     environment:
-      POSTGRES_DB: show
-      POSTGRES_USER: show
-      POSTGRES_PASSWORD: show
+      POSTGRES_DB: shop_dev
+      POSTGRES_USER: shop_dev
+      POSTGRES_PASSWORD: shop_dev
 
   redis:
     image: redis:5-alpine

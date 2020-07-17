@@ -13,7 +13,7 @@ _ENV_VAR = 'VAR_PATH'
 
 SECRET_KEY = os.getenv('SECRET_KEY', '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj')
 
-VAR_PATH = os.getenv(_ENV_VAR, os.path.join(SRC_DIR, 'owl/src/var'))
+VAR_PATH = os.getenv(_ENV_VAR, os.path.join(SRC_DIR, 'shop/src/var'))
 
 REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379')
 

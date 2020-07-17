@@ -29,7 +29,7 @@ src/static/
 src/var/
 media/
 *.log
-var
+src/shop/var
 src/var
 *.sqlite3
 .gitlab-ci.yml

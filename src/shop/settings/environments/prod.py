@@ -1,6 +1,6 @@
 """Production настройки приложения."""
 
-from owl.settings.environments.base import *  # @UnusedWildImport
+from shop.settings.environments.base import *  # @UnusedWildImport
 
 
 DEBUG = False
