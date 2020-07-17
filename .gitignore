@@ -1,16 +1,35 @@
-env
-**/*.pyc
-**/__pycache__
-media
-.DS_Store
-*.sqlite3
-*.env
+# Windows image file caches
+.env.local
+etc/
+other/
+.coverage
+htmlcov/
+isort.log
+pylint.log
+pylint.txt
 
-# Accept these files in the repository
-!.gitignore
-!.travis.yml
-/.env
-/.vscode
-Lib
-static
-src/core/migrations
+.idea
+.vscode/
+.mypy_cache
+.cache/
+.pytest_cache
+__pycache__/
+
+result/
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Thumbnails
+._*
+
+.env
+
+.mypy_cache/
+src/static/
+src/var/
+media/
+*.log
+var
+src/var
+*.sqlite3
+.gitlab-ci.yml
