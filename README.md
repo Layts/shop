@@ -1,8 +1,10 @@
 # eshop
 
 ## Запуск виртуального окружения руками
-1. В корневой директории проекта в терминале выполняем команду pipenv shell
-1. Там же выполняем pipenv install 
+1. Запускаем терминал в корне приложения
+1. Выполняем команду `pipenv shell`
+1. Выполняем команду `pipenv install`
+1. Устраняем ошибки, если есть
 1. Устанавливаем pipenv окружение в вашей любимой IDE
 
 > Обязательно нужно ставить окружение pipenv. Virtualenv окружение тоже может работать, 
@@ -10,9 +12,15 @@
     
 ## Если работаем через Pycharm
 
-1. Открываем File/Settings.../Project: shop/Project Interpretator
-1. Нажимаем <No interpreter>/Show All/ 
-1. Жмём Alt + Insert
-1. Слева выбираем *Pipenv Environment*
-1. Жмём ОК
+1. Открываем `File/Settings.../Project: shop/Project Interpretator`
+1. Нажимаем `<No interpreter>/Show All/`
+1. Жмём `Alt + Insert`
+1. Слева выбираем **Pipenv Environment**
+1. Жмём `ОК`
 1. Pycharm сам установит все зависимости
+
+## Запуск баз данных в девелопмент окружении
+1. Запускаем терминал в корне приложения
+1. Подтягиваем переменные окружения `set -a && . ./.env && set +a` или любым другим удобным способом
+1. Вводим `docker-compose -f docker-compose-dev.yml up`
+1. Если всё запустилось, начинаем работу
