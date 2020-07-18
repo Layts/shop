@@ -42,6 +42,6 @@ for path in (VAR_PATH, MEDIA_ROOT):
     if not os.path.exists(path):
         os.mkdir(path)
 
-STATICFILES_DIRS = (
-    os.path.abspath(os.path.join(BASE_DIR, 'static')),
-)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files'),
+                    'C:\code\shop\static',
+                    ]
